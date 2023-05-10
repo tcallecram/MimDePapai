@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+	            font-family: "Open Sans";
+                background-color: #a59c9c;
+            }
+
+
+            .titulo{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 40px;
+                color: #fff;
+                display: flex;
+                margin-top: 200px;
+                justify-content: center;
+                align-items: center; 
+            }
+
+            .botao{
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                color:white;
+             }
+
+            button{ 
+                color: #fff;
+                background-color: rgb(97, 81, 81);
+                font-weight: bold;
+                padding: 10px;
+                margin-left: 10px;
+                size: 30px;
+                cursor: pointer;
+                
+            }
+
+            #sim{
+                margin-right: 150px;
+            }
+
+            #meuBotao {
+                position: absolute;
+                transition: 0.3s ease-in-out;
+            }
+
+
+
+        </style>
+
+        <script>
+
+            /*function bigImg(x) {
+                x.position = 50px 90px;
+            }*/
+
+            function posicaoAleatoriaBotao() {
+                const meuBotao = document.getElementById('meuBotao');
+                const paiBotao = meuBotao.parentElement;
+
+                const paiWidth = paiBotao.clientWidth;
+                const paiHeight = paiBotao.clientHeight;
+
+                const leftPos = Math.floor(Math.random() * (paiWidth - meuBotao.offsetWidth));
+                const topPos = Math.floor(Math.random() * (paiHeight - meuBotao.offsetHeight));
+
+                meuBotao.style.left = `${leftPos}px`;
+                meuBotao.style.top = `${topPos}px`;
+            }
+
+            function apareceImagem(){
+                const meuBotao = document.getElementById('meuBotao');
+                const minhaImagem = document.getElementById('minhaImagem');
+
+                meuBotao.style.display = 'none';
+                minhaImagem.style.display = 'block';
+            }
+            
+         </script>
+
+        <title>Pergunta Importante</title>
+        <link href="css/style.css" type="text/css" rel="stylesheet"/>
+        <meta charset="utf-i"/>
+    </head>
+
+
+
+    <body>
+        <article>
+            <header>
+                <h1 class="titulo">Me da o cu? &#128513;</h1>
+
+                <div class="botao">
+                    <button id="sim" onclick="apareceImagem()">Sim</button>
+                    <button id="meuBotao" onmouseenter="posicaoAleatoriaBotao()" >Nao</button>
+                </div>
+            </header>
+        </article>
+        
+
+
+
+    </body>
+
+
+
+</html>
